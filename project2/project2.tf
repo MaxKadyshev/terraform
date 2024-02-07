@@ -1,16 +1,14 @@
-# https://devopsrealtime.com/deploy-aws-ec2-instance-hosted-linux-and-windows-ami/
-
 provider "aws" {
   region = "us-east-1"
 }
 
 resource "aws_instance" "p2_ec2_0" {
-  ami           = "ami-0cf10cdf9fcd62d37"
-  instance_type = "t2.nano"
-  key_name = aws_key_pair.p2_kp_2.key_name
+  ami                    = "ami-0cf10cdf9fcd62d37"
+  instance_type          = "t2.nano"
+  key_name               = aws_key_pair.p2_kp_2.key_name
   vpc_security_group_ids = [aws_security_group.p2_sg_7.id]
   root_block_device {
-    volume_size = 10
+    volume_size          = 10
   }
 }
 
@@ -23,12 +21,12 @@ resource "aws_eip" "p2_ei_3" {
 }
 
 resource "aws_instance" "p2_ec2_5" {
-  ami           = "ami-0aca05dd8c2f99518"
-  instance_type = "t2.nano"
-  key_name = aws_key_pair.p2_kp_2.key_name
+  ami                    = "ami-0aca05dd8c2f99518"
+  instance_type          = "t2.nano"
+  key_name               = aws_key_pair.p2_kp_2.key_name
   vpc_security_group_ids = [aws_security_group.p2_sg_7.id]
   root_block_device {
-    volume_size = 30
+    volume_size          = 30
   }
 }
 
@@ -118,3 +116,5 @@ output "p2_pc_13" {
 output "p2_pc_14" {
   value = data.aws_pricing_product.p2_pc_12.result
 }
+
+# terraform apply -auto-approve

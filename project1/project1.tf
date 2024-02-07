@@ -1,7 +1,5 @@
-# https://devopsrealtime.com/setup-apache-webserver-on-aws-ec2-instance/
-
 provider "aws" {
-  region     = "us-west-1"
+  region = "us-west-1"
 }
 
 resource "aws_security_group" "p1_sg_1" {
@@ -48,7 +46,7 @@ resource "aws_instance" "p1_ec2_0" {
   ami                    = "ami-061ea90489f8844ca"
   instance_type          = "t2.nano"
   vpc_security_group_ids = [aws_security_group.p1_sg_1.id]
-  key_name = aws_key_pair.p1_kp_4.key_name
+  key_name               = aws_key_pair.p1_kp_4.key_name
 
   user_data = <<-EOF
   #!/bin/bash
@@ -72,8 +70,10 @@ resource "aws_key_pair" "p1_kp_4" {
 
 resource "aws_route53_record" "p1_r53r_5" {
   zone_id = "Z07770913SB0YCPM8QVN6"
-  name    = "test.ghym.ae"
+  name    = "project1.ghym.ae"
   type    = "A"
   ttl     = "300"
   records = [aws_eip.p1_eip_3.public_ip]
 }
+
+# terraform apply -auto-approve

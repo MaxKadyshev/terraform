@@ -22,3 +22,5 @@ You must be having an AWS account to create infrastructure resources on AWS clou
 **NOTE:** You may need to convert the keys from .pem to .ppk if you are using putty to connect to the Linux EC2
 1. Login to Linux EC2 Instance
 1. Login to Windows EC2 Instance
+## Destroy
+Destroy the resources once the testing is over to save the billing

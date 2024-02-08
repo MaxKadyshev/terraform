@@ -34,3 +34,5 @@ Customize the application dependencies mentioned below on AWS EC2 instance and c
 1. Configure S3 life cycle rules to transit previous version objects to Glacier after 30 days and delete the objects after 90 days of object creation date
 ## Validation
 Verify if you are able to access the web application from internet browser
+## Destroy
+Destroy the resources once the testing is over to save the billing

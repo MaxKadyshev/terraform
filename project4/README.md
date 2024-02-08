@@ -14,3 +14,5 @@ Goal of this project to create public S3 Bucket in AWS cloud and update Bucket p
 1. Upload Object to Bucket using AWS CLI
 1. Access the Objects using Object URL from public browser(While your system has same public IP whitelisted)
 1. Access the Objects using Object URL from public browser (While your system has different public IP, Reconnect to internet might change your public IP for testing.)
+## Destroy
+Destroy the resources once the testing is over to save the billing
